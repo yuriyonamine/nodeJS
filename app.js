@@ -1,11 +1,10 @@
 var express = require('express');
 var app = express();
-
+app.set("view engine", "ejs");
 app.listen (3000, function(){
-
+	console.log("Server is online");
 });
 
-
-app.get('/produtos', function(req,res){
-	res.send("<html><body>List</body></html>")
+app.get('/products', function(req,res){
+	res.render("products/list")
 })
